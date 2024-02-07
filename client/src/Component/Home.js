@@ -54,9 +54,9 @@ class Home extends Component {
                 <td>{post.postCategory}</td>
 
                 <td>
-                  <a className="btn btn-warning" href={'/edit/${posts.id}'}>
+                  <button className="btn btn-warning" onClick={() => window.location.href=`/edit/${post.id}`}>
                     <i className="fas fa-edit"></i>&nbsp;Edit
-                  </a>
+                  </button>
 
                   &nbsp;
 

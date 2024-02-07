@@ -7,34 +7,31 @@ const router = express.Router();
 
 router.post("/posts/save", async (req, res) => {
 
-    let newPosts = new Posts(req.body);
+    const { topic , description , postCategory } = req.body;
+    const newPosts = new Posts({
 
-    newPost.save((err) =>{
-        if(err){
-            return res.status(400).json({
-                error:err
-            });
-        }
-        return res.status(200).json ({
-            success:"Posts saved successfullu"
-        });
+        topic,
+        description,
+        postCategory,
+
     });
+
+    newPosts.save();
+
+    return res.json({ success : true , message : 'successfull'});
+
 });
 
 //get posts
 
-router.get('/posts',(req,res) => {
-    Posts.find().exec((err,posts) =>{
-        if(err){
-            return res.status(400).json({
-                error:err
-            });
-        }
-        return res.status(200).json({
-            success:true,
-            existingPosts:posts
-        });
-    });
+router.get('/posts', async(req,res) => {
+   try{
+
+    const test = await Posts.find();
+    res.json({test});
+   }catch(error){
+    console.error ('error : ' ,error);
+   }
 });
 
 

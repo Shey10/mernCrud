@@ -9,9 +9,9 @@ const app = express();
 const postRoutes = require("./routes/posts");
 
 // App middleware
+app.use(cors());
 app.use(bodyParser.json());
 app.use(postRoutes);
-app.use(cors());
 
 const PORT = 8000;
 const DB_URL = 'mongodb+srv://janithisanga13:Shey2002@mernapp.mxscid7.mongodb.net/mernCrud?retryWrites=true&w=majority';
@@ -28,4 +28,3 @@ mongoose.connect(DB_URL, {
 app.listen(PORT, () => {
     console.log(`App is Running on ${PORT}`);
 });
-
