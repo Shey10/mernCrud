@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { BrowserRouter,Route} from "react-router-dom";
-import NavBar from "./Components/NavBar";
-import Home from "./Components/Home";
-import CreatePost from "./Components/CreatePost";
-import EditPost from "./Components/EditPost";
-import PostDetails from "./Components/PostDetails";
+import NavBar from "./Component/NavBar";
+import Home from "./Component/Home";
+import CreatePost from "./Component/CreatePost";
+import EditPost from "./Component/EditPost";
+import PostDetails from "./Component/PostDetails";
 
 export default class App extends Component {
   render() {
